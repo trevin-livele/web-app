@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build && node scripts/inject-env.js",
+  "outputDirectory": "dist/web-app/browser",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/fineract-provider/:path*",
+      "destination": "https://www.trelvotechltd.com/fineract-provider/:path*"
+    },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

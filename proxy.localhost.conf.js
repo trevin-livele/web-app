@@ -16,14 +16,12 @@
 module.exports = [
   {
     context: ['/fineract-provider'],
-    target: 'http://localhost:8443',
-    pathRewrite: { '^/fineract-provider': '' },
+    target: 'http://localhost:31304',
     changeOrigin: true,
     secure: false,
     logLevel: 'debug',
     onProxyReq: function (proxyReq, req, res) {
-      const rewrittenPath = (req.url || '').replace(/^\/fineract-provider/, '');
-      console.log('[Proxy] Proxying:', req.method, req.url, '->', this.target + rewrittenPath);
+      console.log('[Proxy] Proxying:', req.method, req.url, '->', this.target + req.url);
     },
     onError: function (err, req, res) {
       console.error(

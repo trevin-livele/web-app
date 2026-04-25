@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/fineract-provider/:path*",
-      "destination": "https://www.trelvotechltd.com/fineract-provider/:path*"
+      "destination": "https://api.trelvotechltd.com/fineract-provider/:path*"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]

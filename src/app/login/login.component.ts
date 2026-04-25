@@ -149,6 +149,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
 
     // Load version info for table
+    if (!this.displayBackendInfo) {
+      return;
+    }
     this.versionService
       .getBackendInfo()
       .pipe(take(1))
